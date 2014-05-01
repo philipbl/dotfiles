@@ -6,3 +6,7 @@ vim +PluginInstall +qall
 
 # Clone oh-my-zsh
 curl -L http://install.ohmyz.sh | sh
+mv .zshrc.pre-oh-my-zsh .zshrc
+
+# Change theme to my linking
+# coming soon...

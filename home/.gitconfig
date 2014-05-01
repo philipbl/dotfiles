@@ -1,0 +1,28 @@
+[user]
+	name = Philip Lundrigan
+	email = philiplundrigan@gmail.com
+[core]
+	editor = vim
+    excludesfile = ~/.gitignore
+[color]
+	ui = 1
+[alias]
+	graph = log --graph --all --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%C(yellow)%d%Creset' --abbrev-commit --date=relative
+	st = status
+	lg = log
+	co = checkout
+	br = branch
+    discard = checkout --
+    unstage = reset HEAD
+	freq = history | cut -c 8- | grep git | sort | uniq -c  | sort -n -r | head -n 5
+	d = difftool
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[help]
+	autocorrect = 1
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

@@ -7,22 +7,27 @@ set nocompatible
 filetype off
 
 " Set up Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
-" Bundles
-Bundle 'bling/vim-airline'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'tpope/vim-fugitive'
-Bundle 'nanotech/jellybeans.vim'
+" Plugins
+Plugin 'bling/vim-airline'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-surround'
-Bundle 'davidoc/taskpaper.vim'
-Bundle 'Tabmerge'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
-Bundle 'wlangstroth/vim-racket'
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'davidoc/taskpaper.vim'
+Plugin 'Tabmerge'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'tpope/vim-commentary'
+Plugin 'Lokaltog/vim-easymotion'
+
+" Required for Vundle
+call vundle#end()
+filetype plugin indent on
 
 " vim-airline options
 let g:airline_powerline_fonts = 1
@@ -31,9 +36,6 @@ let g:airline_theme='jellybeans'
 
 " vim-markdown options
 let g:vim_markdown_folding_disabled=1
-
-" Required for Vundle
-filetype plugin indent on
 
 " Syntax highlighting on
 syntax enable

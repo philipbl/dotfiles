@@ -90,8 +90,8 @@ PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    PROMPT='%$my_gray%n@%m%{$reset_color%}
-%{$reset_color%}
+    PROMPT='%{$reset_color%}
+$my_gray%n@%m%{$reset_color%}
 $FG[032]%~\
 
 $FG[105]%(!.#.»)%{$reset_color%} '

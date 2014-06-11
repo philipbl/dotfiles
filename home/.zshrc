@@ -28,13 +28,13 @@ export ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github osx terminalapp brew pip python autojump sublime colored-man colorize cp compleat)
+plugins=(git github osx terminalapp brew pip python autojump sublime colored-man colorize cp compleat lein)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/philiplundrigan/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/usr/local/opt/ruby/bin:/Applications/Racket v6.0/bin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/usr/local/opt/ruby/bin:/Applications/Racket v6.0/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 
 # Virtual env wrapper

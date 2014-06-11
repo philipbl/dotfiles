@@ -24,6 +24,7 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'wojtekmach/vim-rename'
 
 " Required for Vundle
 call vundle#end()
@@ -97,6 +98,9 @@ inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 command! Q q            " Bind :Q to :q
 command! Qall qall      " Bind :Qall to :qall
 cnoremap q1 q!
+
+" Shortcut for clearing search results
+command C let @/=""
 
 
 " ========================================================================

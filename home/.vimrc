@@ -24,7 +24,10 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'wojtekmach/vim-rename'
+Plugin 'taglist.vim'
+Plugin 'vim-pandoc/vim-markdownfootnotes'
+Plugin 'tpope/vim-dispatch'
+Plugin 'bjoernd/vim-weasel'
 
 " Required for Vundle
 call vundle#end()
@@ -33,6 +36,7 @@ filetype plugin indent on
 " vim-airline options
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_theme='jellybeans'
 
 " vim-markdown options
@@ -47,8 +51,17 @@ syntax enable
 " ========================================================================
 let mapleader=","
 
+" Remember last tab and switch to it when <Leader>tl is used
+let g:lasttab = 1
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
 map <Leader>rc :tabe ~/.vimrc<CR>
 map <Leader>zshrc :tabe ~/.zshrc<CR>
+map <Leader>m :Make!<CR>
+
+" Bring up taglist window
+nnoremap <silent> <Leader>t :TlistToggle<CR>
 
 " Easy escape
 imap jk <Esc>
@@ -98,6 +111,8 @@ inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 command! Q q            " Bind :Q to :q
 command! Qall qall      " Bind :Qall to :qall
 cnoremap q1 q!
+cnoremap Wq wq
+cnoremap WQ wq
 
 " Shortcut for clearing search results
 command C let @/=""
@@ -125,8 +140,9 @@ set backspace=2
 " Search
 set incsearch       "Lookahead as search pattern is specified
 set ignorecase      "Ignore case in all searches...
-set smartcase       "...unless uppercase letters used
+set smartcase       " ...unless uppercase letters used
 set hlsearch        "Highlight all matches
+
 
 " ========================================================================
 " Display

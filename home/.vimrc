@@ -20,7 +20,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'davidoc/taskpaper.vim'
 Plugin 'Tabmerge'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
@@ -28,6 +27,8 @@ Plugin 'taglist.vim'
 Plugin 'vim-pandoc/vim-markdownfootnotes'
 Plugin 'tpope/vim-dispatch'
 Plugin 'bjoernd/vim-weasel'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'panozzaj/vim-autocorrect'
 
 " Required for Vundle
 call vundle#end()
@@ -37,7 +38,7 @@ filetype plugin indent on
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
-let g:airline_theme='jellybeans'
+let g:airline_theme='tomorrow'
 
 " vim-markdown options
 let g:vim_markdown_folding_disabled=1
@@ -55,6 +56,9 @@ let mapleader=","
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+
+" Clear search result highlight by :C
+command C let @/=""
 
 map <Leader>rc :tabe ~/.vimrc<CR>
 map <Leader>zshrc :tabe ~/.zshrc<CR>
@@ -114,9 +118,6 @@ cnoremap q1 q!
 cnoremap Wq wq
 cnoremap WQ wq
 
-" Shortcut for clearing search results
-command C let @/=""
-
 
 " ========================================================================
 " Text
@@ -147,13 +148,15 @@ set hlsearch        "Highlight all matches
 " ========================================================================
 " Display
 " ========================================================================
-colorscheme jellybeans
+" set background=dark
+colorscheme tomorrow-night
 set equalalways       " Display split windows equally
-set background=light
+" set background=light
 set t_Co=256          " Number of colors in terminal
 set guioptions-=L     " Remove left scroll bar
 set guioptions-=r     " Remove right scroll bar
 set ruler             " Show line number
+set relativenumber
 set number            " Line numbers
 set laststatus=2      " Status bar
 set showcmd           " Show commands
@@ -176,6 +179,7 @@ augroup END
 
 " Text files
 autocmd BufNewFile,BufRead *.txt,*.tex,*.md setlocal spell spelllang=en_us wrap
+autocmd BufNewFile,BufRead *.txt,*.tex,*.md call AutoCorrect()
 
 " Python
 autocmd BufNewFile,BufReadPost *.py setl syntax=python shiftwidth=4 expandtab makeprg=python\ %
@@ -186,6 +190,8 @@ autocmd BufNewFile,BufRead *.taskpaper setlocal spell spelllang=en_us wrap
 " Git commit messages
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
+" Source vimrc when saving
+" autocmd! bufwritepost .vimrc source %
 
 " ========================================================================
 " Functions

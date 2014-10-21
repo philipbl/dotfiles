@@ -65,7 +65,10 @@ map <Leader>zshrc :tabe ~/.zshrc<CR>
 map <Leader>m :Make!<CR>
 
 " Bring up taglist window
-nnoremap <silent> <Leader>t :TlistToggle<CR>
+" nnoremap <silent> <Leader>t :TlistToggle<CR>
+
+" Some snippets I use often
+map <Leader>c a~\cite{}<esc>i
 
 " Easy escape
 imap jk <Esc>
@@ -149,7 +152,7 @@ set hlsearch        "Highlight all matches
 " Display
 " ========================================================================
 " set background=dark
-colorscheme tomorrow-night
+colorscheme Tomorrow-Night
 set equalalways       " Display split windows equally
 " set background=light
 set t_Co=256          " Number of colors in terminal
@@ -162,7 +165,7 @@ set laststatus=2      " Status bar
 set showcmd           " Show commands
 set splitbelow        " Split windows below current window
 set colorcolumn=80
-set scrolloff=10
+set scrolloff=20
 set laststatus=2
 set ttimeoutlen=50
 

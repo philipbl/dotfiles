@@ -40,6 +40,14 @@ source $ZSH/oh-my-zsh.sh
 # Allow git to do the globing not zsh
 alias git='noglob git'
 
+# Git number aliases
+alias gn='git number'
+alias ga='git number add'
+
+# SSH aliases
+alias camera='ssh -p 9123 -L 8090:192.168.0.200:8090 bridgetlundrigan@75.162.179.138'
+alias vnc='ssh -p 9123 -L 5901:192.168.0.2:5901 bridgetlundrigan@75.162.179.138'
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -50,6 +58,15 @@ export EDITOR='vim'
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Android stuff
+export PATH="$PATH:/Applications/Android Studio.app/sdk/platform-tools"
+export ANDROID_HOME="/Applications/Android Studio.app/sdk"
+
+# Add my bin to PATH
+export PATH="$HOME/bin:$PATH"
+
+
 
 # Little alias for open
 function o {

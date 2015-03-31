@@ -29,6 +29,8 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'bjoernd/vim-weasel'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'panozzaj/vim-autocorrect'
+Plugin 'fatih/vim-go'
+Plugin 'nvie/vim-flake8'
 
 " Required for Vundle
 call vundle#end()
@@ -42,6 +44,13 @@ let g:airline_theme='tomorrow'
 
 " vim-markdown options
 let g:vim_markdown_folding_disabled=1
+
+" vim-go options
+let g:go_fmt_command = "goimports"
+
+" vim-flake8 options
+let g:flake8_show_quickfix=0
+let g:flake8_show_in_gutter=1
 
 " Syntax highlighting on
 syntax enable
@@ -134,6 +143,7 @@ set tabstop=4
 set shiftwidth=4
 set shiftround      " When at 3 spaces and I hit >>, go to 4, not 5.
 set lbr				" Linebreak
+set breakindent
 "set tw=80			" Linebreak at 80 char
 "set formatoptions+=aw
 "set fo-=t
@@ -186,6 +196,7 @@ autocmd BufNewFile,BufRead *.txt,*.tex,*.md call AutoCorrect()
 
 " Python
 autocmd BufNewFile,BufReadPost *.py setl syntax=python shiftwidth=4 expandtab makeprg=python\ %
+autocmd BufWritePost *.py call Flake8()
 
 " Taskpaper
 autocmd BufNewFile,BufRead *.taskpaper setlocal spell spelllang=en_us wrap

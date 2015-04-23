@@ -186,7 +186,8 @@ set ttimeoutlen=50
 
 " Automatically add Shebang
 augroup Shebang
-     autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl>\"|$
+     autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\<nl>\"|$
+     autocmd BufNewFile *.swift 0put =\"#!/usr/bin/env swift\<nl>\"|$
      autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
 augroup END
 

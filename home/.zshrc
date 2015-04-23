@@ -43,9 +43,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Virtual env wrapper
-# source /usr/local/bin/virtualenvwrapper.sh
-
 # Allow git to do the globing not zsh
 alias git='noglob git'
 
@@ -105,3 +102,9 @@ export PATH=$PATH:$GOPATH/bin
 # Stupid fix for virtual environments
 # I need to change this eventually
 cd `pwd`
+
+### Added by the Heroku Toolbelt
+export PATH="$PATH:/usr/local/heroku/bin"
+
+### Racket binaries
+export PATH="$PATH:/Applications/Racket v6.1.1/bin"
